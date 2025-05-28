@@ -6,7 +6,7 @@
 #    By: cferrett <cferrett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/19 17:37:37 by cferrett          #+#    #+#              #
-#    Updated: 2025/05/27 19:00:26 by cferrett         ###   ########.fr        #
+#    Updated: 2025/05/27 20:03:52 by cferrett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,7 @@ re: fclean all
 # ======= Lancer avec valgrind ==========
 valgrind: $(EXE)
 	@echo "Test avec valgrind"
-	valgrind --leak-check=full --track-origins=yes ./$(NAME)
+	valgrind --leak-check=full --track-origins=yes ./$(EXE)
 
 
 .PHONY: all set clean fclean re run valgrind

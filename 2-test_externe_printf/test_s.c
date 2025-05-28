@@ -6,13 +6,14 @@
 /*   By: cferrett <cferrett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 17:55:44 by cferrett          #+#    #+#             */
-/*   Updated: 2025/05/27 18:10:53 by cferrett         ###   ########.fr       */
+/*   Updated: 2025/05/28 18:14:05 by cferrett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include "print_test.h"
 #include <stdio.h>
+#include <stddef.h>
 
 void test_s(void)
 {
@@ -20,38 +21,52 @@ void test_s(void)
 
 	printf("\n=== TEST %%s ===\n");
 
-	// Cas 1 : chaîne classique
+	printf("Cas 1 : chaîne classique\n");
 	ret1 = ft_printf("ft_printf : [%s]\n", "Bonjour");
 	ret2 = printf("printf    : [%s]\n", "Bonjour");
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	// Cas 2 : chaîne vide
+	printf("Cas 2 : chaîne vide\n");
 	ret1 = ft_printf("ft_printf : [%s]\n", "");
 	ret2 = printf("printf    : [%s]\n", "");
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	// Cas 3 : chaîne avec espaces
+	printf("Cas 3 : chaîne avec espaces\n");
 	ret1 = ft_printf("ft_printf : [%s]\n", "   ");
 	ret2 = printf("printf    : [%s]\n", "   ");
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	// Cas 4 : chaîne NULL
+	printf("Cas 4 : chaîne NULL\n");
 	ret1 = ft_printf("ft_printf : [%s]\n", (char *)NULL);
 	ret2 = printf("printf    : [%s]\n", (char *)NULL);
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	// Cas 5 : chaîne avec caractères spéciaux
+	printf("Cas 5 : chaîne avec caractères spéciaux\n");
 	ret1 = ft_printf("ft_printf : [%s]\n", "\tTab\nNewline");
 	ret2 = printf("printf    : [%s]\n", "\tTab\nNewline");
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	// Cas 6 : longue chaîne
+	printf("Cas 6 : longue chaîne\n");
 	ret1 = ft_printf("ft_printf : [%s]\n", "Une très longue chaîne pour tester si tout s'affiche correctement !");
 	ret2 = printf("printf    : [%s]\n", "Une très longue chaîne pour tester si tout s'affiche correctement !");
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	// Cas 7 : chaîne avec caractères ASCII faibles
+	printf("Cas 7 : chaîne avec caractères ASCII faibles\n");
 	ret1 = ft_printf("ft_printf : [%s]\n", "\1\2\3abc");
 	ret2 = printf("printf    : [%s]\n", "\1\2\3abc");
+	
+	printf("\nFrancinette \"\"\n");
+	ret1 = ft_printf("ft_printf : [%s]\n", "");
+	ret2 = printf("printf    : [%s]\n", "");
+	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
+
+	printf("\nFrancinette \"\"\n");
+	ret1 = ft_printf("ft_printf : [ %s]\n", "");
+	ret2 = printf("printf    : [ %s]\n", "");
+	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
+
+	printf("\nFrancinette NULL\n");
+	ret1 = ft_printf("ft_printf : NULL %s NULL \n", NULL);
+	ret2 = printf("printf    : NULL %s NULL \n", NULL);
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 }

@@ -6,16 +6,16 @@
 /*   By: cferrett <cferrett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 18:50:07 by cferrett          #+#    #+#             */
-/*   Updated: 2025/05/27 18:53:07 by cferrett         ###   ########.fr       */
+/*   Updated: 2025/05/28 17:53:09 by cferrett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include "print_test.h"
 #include <stdio.h>
 #include <limits.h> // pour UINT_MAX
 
-void test_x_X(void)
+void	test_x_X(void)
 {
 	int ret1, ret2;
 

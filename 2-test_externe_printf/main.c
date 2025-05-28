@@ -6,11 +6,12 @@
 /*   By: cferrett <cferrett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:56:06 by cferrett          #+#    #+#             */
-/*   Updated: 2025/05/27 19:00:57 by cferrett         ###   ########.fr       */
+/*   Updated: 2025/05/28 17:51:54 by cferrett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
+#include "libft/libft.h"
 
 #include "print_test.h"
 #include <stddef.h> //  pour bzero
@@ -29,7 +30,7 @@ void	test_percent(void);
 
 int	main(void)
 {
-	printf("-------------------- TEST FT_PRINTF ------------------\n");
+	printf("-------------------- TEST FT_PRINTF --------xxx----------\n");
 	test_c();
 	test_s();
 	test_d_i();
