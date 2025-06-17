@@ -6,7 +6,7 @@
 /*   By: cferrett <cferrett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 18:50:07 by cferrett          #+#    #+#             */
-/*   Updated: 2025/05/28 17:53:09 by cferrett         ###   ########.fr       */
+/*   Updated: 2025/06/11 16:27:51 by cferrett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,37 +21,37 @@ void	test_x_X(void)
 
 	printf("\n=== TEST %%x et %%X ===\n");
 
-	// Cas 1 : zéro
+	printf("Cas 1 : zéro\n");
 	ret1 = ft_printf("ft_printf : [%x]\n", 0);
 	ret2 = printf("printf    : [%x]\n", 0);
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	// Cas 2 : valeur simple
+	printf("Cas 2 : valeur simple 42\n");
 	ret1 = ft_printf("ft_printf : [%x]\n", 42);
 	ret2 = printf("printf    : [%x]\n", 42);
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	// Cas 3 : valeur avec lettres hex
+	printf("Cas 3 : valeur avec lettres hex 255\n");
 	ret1 = ft_printf("ft_printf : [%x]\n", 255); // FF
 	ret2 = printf("printf    : [%x]\n", 255);
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	// Cas 4 : grande valeur
+	printf("Cas 4 : grande valeur 3735928559u\n");
 	ret1 = ft_printf("ft_printf : [%x]\n", 3735928559u); // deadbeef
 	ret2 = printf("printf    : [%x]\n", 3735928559u);
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	// Cas 5 : UINT_MAX
+	printf("Cas 5 : UINT_MAX\n");
 	ret1 = ft_printf("ft_printf : [%x]\n", UINT_MAX);
 	ret2 = printf("printf    : [%x]\n", UINT_MAX);
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	// Cas 6 : %X avec même valeur
+	printf("Cas 6 : %%X avec même valeur 3735928559u\n");
 	ret1 = ft_printf("ft_printf : [%X]\n", 3735928559u); // DEADBEEF
 	ret2 = printf("printf    : [%X]\n", 3735928559u);
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	// Cas 7 : %X avec zéro
+	printf("Cas 7 : %%X avec zéro\n");
 	ret1 = ft_printf("ft_printf : [%X]\n", 0);
 	ret2 = printf("printf    : [%X]\n", 0);
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);

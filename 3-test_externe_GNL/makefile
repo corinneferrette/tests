@@ -6,7 +6,7 @@
 #    By: cferrett <cferrett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/30 11:05:46 by cferrett          #+#    #+#              #
-#    Updated: 2025/06/17 17:17:18 by cferrett         ###   ########.fr        #
+#    Updated: 2025/06/17 19:04:06 by cferrett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g -I${PATH_GNL}
 PATH_FILE = .path_file
-SRC = ${PATH_GNL}/get_next_line.c ${PATH_GNL}/get_next_line_utils.c main.c
+TEST_MAIN ?= main.c
+SRC = ${PATH_GNL}/get_next_line.c ${PATH_GNL}/get_next_line_utils.c ${TEST_MAIN}
 OBJ = $(SRC:.c=.o)
 
 NAME  = get_next_line
@@ -33,6 +34,7 @@ check_path:
 		exit 1; \
 	fi
 
+RED=\033[1;31m
 GRNB=\033[1;32m
 GRN=\033[0;32m
 RESET=\033[0m
@@ -45,7 +47,7 @@ all: $(NAME)
 
 $(NAME) : $(OBJ)
 	@$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BUFFER_SIZE) -o $(NAME) $(OBJ)
-	@echo "${RED}Compilation avec BUFFER_SIZE=$(BUFFER_SIZE) terminée"${RESET}"
+	@echo "${RED}Compilation avec BUFFER_SIZE=$(BUFFER_SIZE) terminée ${RESET}"
 
 #Regle de compilation individuelle
 %.o: %.c
@@ -68,10 +70,10 @@ fclean: clean
 # Règle pour tout nettoyer et recompiler
 re: fclean all
 
-# Regle de tests
+# Regle de tests buffer
 BUFFER_SIZES = 1 8 32 1000
 TEST_FILES = test_1.txt test_empty.txt test_no_newline.txt test_long.txt
-run:
+test_buffer:
 	@for size in $(BUFFER_SIZES); do \
 		echo "\n${GRNB}=== Tests avec BUFFER_SIZE=$$size ===${RESET}"; \
 		$(MAKE) re BUFFER_SIZE=$$size --no-print-directory; \
@@ -84,6 +86,9 @@ run:
 			fi; \
 		done; \
 	done
+test_neg:
+	@$(MAKE) re TEST_MAIN=main_fd_negative.c --no-print-directory
+	@./$(NAME)
 
 # Règle pour lancer valgrind
 valgrind: $(NAME)
@@ -94,4 +99,4 @@ leaks: $(NAME)
 	leaks --atExit -- ./$(NAME) test_1.txt
 
 # Spécification des cibles qui ne sont pas des fichiers
-.PHONY: all clean fclean re valgrind leaks run
+.PHONY: all clean fclean re valgrind leaks test_buffer

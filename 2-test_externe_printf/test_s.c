@@ -6,7 +6,7 @@
 /*   By: cferrett <cferrett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 17:55:44 by cferrett          #+#    #+#             */
-/*   Updated: 2025/05/28 18:14:05 by cferrett         ###   ########.fr       */
+/*   Updated: 2025/06/11 16:19:35 by cferrett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,13 @@ void test_s(void)
 	ret2 = printf("printf    : [%s]\n", "");
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	printf("\nFrancinette \"\"\n");
+	printf("\nFrancinette \" \"\n");
 	ret1 = ft_printf("ft_printf : [ %s]\n", "");
 	ret2 = printf("printf    : [ %s]\n", "");
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
 	printf("\nFrancinette NULL\n");
-	ret1 = ft_printf("ft_printf : NULL %s NULL \n", NULL);
-	ret2 = printf("printf    : NULL %s NULL \n", NULL);
+	ret1 = ft_printf("ft_printf : NULL -> %s\n", (char *)NULL);
+	ret2 = printf("printf    : NULL -> %s\n", (char *)NULL);
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 }
