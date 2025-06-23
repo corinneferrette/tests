@@ -6,7 +6,7 @@
 /*   By: cferrett <cferrett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 19:55:56 by cferrett          #+#    #+#             */
-/*   Updated: 2025/05/28 18:34:09 by cferrett         ###   ########.fr       */
+/*   Updated: 2025/06/19 14:26:14 by cferrett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ void test_c(void)
 	ret2 = printf("printf    : [\\0 = %c]\n", '\0');
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	printf("caractère ASCII bas ('\t' = tabulation)\n");
+	printf("caractère TAB ('\t' = tabulation)\n");
 	ret1 = ft_printf("ft_printf : [%c]\n", '\t');
 	ret2 = printf("printf    : [%c]\n", '\t');
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	printf("caractère ASCII haut (DEL = 127)\n");
+	printf("caractère DEL (DEL = 127)\n");
 	ret1 = ft_printf("ft_printf : [%c]\n", 127);
 	ret2 = printf("printf    : [%c]\n", 127);
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);

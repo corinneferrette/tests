@@ -1,0 +1,8 @@
+Le mode de fonctionnement de 42 a été notamment inspiré de celui de l'EPITECH. Il y a une sélection à l'aide de sessions de « piscine » et enseignement selon le mode projet[17].
+Admission et inscription
+
+Le candidat doit avoir au minimum 18 ans ou être titulaire du baccalauréat (les élèves peuvent déposer une candidature l'année où ils passent leur baccalauréat). Aucun diplôme n'est requis pour les candidats de plus de 18 ans. En 2015, une expérimentation a eu lieu avec Pôle emploi afin de former à la programmation, pendant dix mois, un groupe d'une trentaine de chômeurs seniors[18]. Elle a depuis été renouvelée chaque année.
+
+La première sélection se fait à l'aide d'une série de tests de logique et de mémoire sur le site web de l’établissement destinés à évaluer les capacités des étudiants à apprendre l'informatique[19]. La seconde sélection s'appelle la « piscine ». C'est un processus intensif de quatre semaines durant lesquelles le candidat doit réaliser des travaux pratiques en langage C. L'équipe pédagogique observe leur progression depuis le « bocal » (bureau de l'administration)[20].
+
+L'inscription à la formation est gratuite et concerne chaque année environ 850 étudiants à Paris[21]. 

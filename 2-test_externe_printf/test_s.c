@@ -6,7 +6,7 @@
 /*   By: cferrett <cferrett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 17:55:44 by cferrett          #+#    #+#             */
-/*   Updated: 2025/06/11 16:19:35 by cferrett         ###   ########.fr       */
+/*   Updated: 2025/06/19 14:27:09 by cferrett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void test_s(void)
 	ret2 = printf("printf    : [%s]\n", "Une très longue chaîne pour tester si tout s'affiche correctement !");
 	printf("→ retour ft_printf : %d | printf : %d\n\n", ret1, ret2);
 
-	printf("Cas 7 : chaîne avec caractères ASCII faibles\n");
+	printf("Cas 7 : chaîne abc\n");
 	ret1 = ft_printf("ft_printf : [%s]\n", "\1\2\3abc");
 	ret2 = printf("printf    : [%s]\n", "\1\2\3abc");
 	

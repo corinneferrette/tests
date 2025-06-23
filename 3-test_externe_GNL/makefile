@@ -6,7 +6,7 @@
 #    By: cferrett <cferrett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/30 11:05:46 by cferrett          #+#    #+#              #
-#    Updated: 2025/06/17 19:04:06 by cferrett         ###   ########.fr        #
+#    Updated: 2025/06/23 14:01:17 by cferrett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,19 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g -I${PATH_GNL}
 PATH_FILE = .path_file
 TEST_MAIN ?= main.c
+TEST_MAIN_BONUS ?= main_bonus.c
+FILE_TEST ?= test_wiki.txt
+
 SRC = ${PATH_GNL}/get_next_line.c ${PATH_GNL}/get_next_line_utils.c ${TEST_MAIN}
 OBJ = $(SRC:.c=.o)
-
 NAME  = get_next_line
+
+SRC_BONUS = ${PATH_GNL}/get_next_line_bonus.c ${PATH_GNL}/get_next_line_utils_bonus.c ${TEST_MAIN_BONUS}
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
+NAME_BONUS = get_next_line_bonus
+
+
+
 #======== Chargement du chemin depuis .path_file ==============
 -include $(PATH_FILE)
 # ===== Règle : définir le chemin vers ft_printf ============
@@ -72,7 +81,7 @@ re: fclean all
 
 # Regle de tests buffer
 BUFFER_SIZES = 1 8 32 1000
-TEST_FILES = test_1.txt test_empty.txt test_no_newline.txt test_long.txt
+TEST_FILES = test_1.txt test_empty.txt test_no_newline.txt test_long.txt test.wiki.txt
 test_buffer:
 	@for size in $(BUFFER_SIZES); do \
 		echo "\n${GRNB}=== Tests avec BUFFER_SIZE=$$size ===${RESET}"; \
@@ -89,6 +98,10 @@ test_buffer:
 test_neg:
 	@$(MAKE) re TEST_MAIN=main_fd_negative.c --no-print-directory
 	@./$(NAME)
+
+test:
+	@$(MAKE) re TEST_MAIN=main.c --no-print-directory
+	@./$(NAME) $(FILE_TEST)
 
 # Règle pour lancer valgrind
 valgrind: $(NAME)
